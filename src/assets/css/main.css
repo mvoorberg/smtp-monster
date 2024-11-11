@@ -735,8 +735,8 @@ p {
   height: 5px;
   width: 0;
   border-radius: 16px;
-  background: #fdd446;
-  bottom: 15px;
+  background: #89c0fa;
+  bottom: 6px;
   left: 0;
   z-index: -1;
   -webkit-transition: all 0.3s ease-out 0s;
