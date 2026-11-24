@@ -1,0 +1,55 @@
+{
+  "title": "SMTPMonster: a more professional hand",
+  "question": "Three conventional, polished directions plus the category standard. Pick one or steer again.",
+  "options": [
+    {
+      "id": "spec",
+      "kind": "grounded",
+      "label": "The Transcript",
+      "lineage": "Infrastructure documentation and RFC 5321 transcripts",
+      "thesis": "Prove it the way engineers trust: show the SMTP conversation and the exact moment the recipient is rewritten.",
+      "palette": ["#f7f7f5", "#16181d", "#5b6170", "#1f6f5c", "#e9ebe7"],
+      "materials": ["ruled hairlines", "monospace transcript", "precise grotesk"],
+      "viewport": "Left: headline, one line of copy and the email field. Right: an annotated SMTP session where RCPT TO customer addresses resolve to your inbox, line by line.",
+      "risk": "Familiar to anyone who reads infra docs; the transcript must be the hero, not a decoration.",
+      "html": ".impeccable/decision/spec.html"
+    },
+    {
+      "id": "inbox",
+      "kind": "grounded",
+      "label": "The Inbox",
+      "lineage": "Mail client UI: the place the product actually shows up",
+      "thesis": "Your inbox is the UI, so the page shows the inbox: the looped-back message, rendered, with its original recipients on top.",
+      "palette": ["#ffffff", "#111827", "#6b7280", "#2b59c3", "#f3f4f6"],
+      "materials": ["calm app chrome", "rendered email", "soft rules"],
+      "viewport": "Headline and email field on top; below, a full-width, realistic mail-client pane open on a looped message showing the From/To/CC/BCC block SMTPMonster adds.",
+      "risk": "The most conventional of the three; leans on executing the mail pane with real care.",
+      "html": ".impeccable/decision/inbox.html"
+    },
+    {
+      "id": "flow",
+      "kind": "grounded",
+      "label": "The Safety Valve",
+      "lineage": "Network and security architecture diagrams",
+      "thesis": "A calm, serious infrastructure page: one diagram where every outbound path is closed except the one back to you.",
+      "palette": ["#0e1726", "#e8edf4", "#8a97ab", "#3fb68b", "#d9534f"],
+      "materials": ["deep navy ground", "line diagram", "status dots"],
+      "viewport": "Dark navy page; headline and email field above a wide routing diagram: your app on the left, real recipients struck off on the right, a single live path looping back to your inbox.",
+      "risk": "Dark infra pages are common in dev tooling; it earns its place only if the diagram is exact.",
+      "html": ".impeccable/decision/flow.html"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code" },
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "The category standard",
+    "thesis": "Sits alongside Mailtrap, Postmark and Resend: white page, crisp sans, one brand blue, product screenshot.",
+    "palette": ["#ffffff", "#0f172a", "#4f46e5"],
+    "materials": ["clean grid", "code snippet", "product screenshot"],
+    "viewport": "Headline and email field left, a config snippet and inbox screenshot right, three benefits below.",
+    "risk": "Indistinguishable from the competition by design."
+  },
+  "steer": true
+}

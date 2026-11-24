@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-24T12:00:00Z",
+  "title": "Design System: SMTPMonster",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#f6f6f2", "tonalRamp": ["#3a3a35", "#5c5c55", "#82827a", "#a8a8a0", "#c9c9c1", "#e2e2da", "#eeeee8", "#f6f6f2"] },
+      "paper-2": { "role": "neutral", "displayName": "Paper Shade", "canonical": "#eeeee8" },
+      "card": { "role": "neutral", "displayName": "Card White", "canonical": "#ffffff" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#15171c", "tonalRamp": ["#0b0c0f", "#15171c", "#2a2d35", "#3f434d", "#555b67", "#80858f", "#b0b3ba", "#e4e5e8"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#2a2d35" },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#555b67" },
+      "rule": { "role": "neutral", "displayName": "Rule", "canonical": "#d9dad3" },
+      "rule-strong": { "role": "neutral", "displayName": "Rule Strong", "canonical": "#b9bbb2" },
+      "teal": { "role": "primary", "displayName": "Loopback Teal", "canonical": "#0c766f", "tonalRamp": ["#062e2b", "#08433f", "#0a5a54", "#0c766f", "#3f958e", "#7db8b1", "#b8d9d4", "#e3f0ed"] },
+      "teal-tint": { "role": "primary", "displayName": "Held Tint", "canonical": "#e3f0ed" },
+      "strike": { "role": "secondary", "displayName": "Strike Red", "canonical": "#b23a30", "tonalRamp": ["#3d1410", "#5e1d17", "#85291f", "#b23a30", "#cc6257", "#e0928a", "#efc0bb", "#f8e3e1"] },
+      "on-ink": { "role": "neutral", "displayName": "On Ink", "canonical": "#ecece6" },
+      "on-ink-2": { "role": "neutral", "displayName": "On Ink Muted", "canonical": "#a9adb6" },
+      "signal-on-ink": { "role": "primary", "displayName": "Signal on Ink", "canonical": "#8fd3c4" },
+      "ink-rule": { "role": "neutral", "displayName": "Ink Rule", "canonical": "#2c3038" },
+      "ink-rule-strong": { "role": "neutral", "displayName": "Ink Rule Strong", "canonical": "#3a3e47" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single hero headline; 36px on phones." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings." },
+      "title": { "displayName": "Title", "purpose": "Step titles, reason terms, mail subject." },
+      "body": { "displayName": "Body", "purpose": "Prose; measure 32 to 36em; 16px on phones." },
+      "body-small": { "displayName": "Body Small", "purpose": "Nav, document body, LogMonster detail copy." },
+      "mono": { "displayName": "Mono", "purpose": "Every protocol fact: transcripts, code, credentials, header fields. Ligatures off." },
+      "label": { "displayName": "Label", "purpose": "The uppercase HELD status flag only." }
+    },
+    "shadows": [
+      { "name": "lifted-document", "value": "0 24px 48px -24px rgba(21, 23, 28, 0.25)", "purpose": "Only for a document shown as an artefact (the looped-back mail mock)." },
+      { "name": "focus-halo", "value": "0 0 0 3px #e3f0ed, 0 0 0 4px #0c766f", "purpose": "Focus-within on the composite sign-up field." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Expo-out for reveals and the mark's hover tilt." },
+      { "name": "line-in", "value": "0.5s ease, 120ms stagger, 150ms initial delay; opacity 0, translateY(4px), blur(2px) to none", "purpose": "One-time line-by-line reveal of protocol output; disabled under reduced motion." },
+      { "name": "state", "value": "0.2s", "purpose": "Colour and background changes on hover." },
+      { "name": "mark-hover", "value": "rotate(-8deg) scale(1.06), 0.5s ease", "purpose": "Nav mark hover." }
+    ],
+    "breakpoints": [
+      { "name": "tiny", "value": "359px" },
+      { "name": "phone", "value": "640px" },
+      { "name": "tablet", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square ink button that turns teal on hover; the main call to action.",
+      "html": "<a class=\"ds-btn-dark\" href=\"#\">Get credentials</a>",
+      "css": ".ds-btn-dark { display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 28px; background: #15171c; color: #fff; font: 600 16px \"Schibsted Grotesk\", \"Segoe UI\", system-ui, sans-serif; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; transition: background 0.2s; } .ds-btn-dark:hover { background: #0c766f; } .ds-btn-dark:focus-visible { outline: 2px solid #0c766f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Button on Ink",
+      "kind": "button",
+      "refersTo": "button-on-ink",
+      "description": "White square button for ink bands; hovers to the on-ink signal.",
+      "html": "<div class=\"ds-ink-band\"><a class=\"ds-btn-light\" href=\"#\">Open LogMonster</a></div>",
+      "css": ".ds-ink-band { background: #15171c; padding: 24px; } .ds-btn-light { display: inline-flex; align-items: center; height: 50px; padding: 0 24px; background: #fff; color: #15171c; font: 600 16px \"Schibsted Grotesk\", system-ui, sans-serif; text-decoration: none; border-radius: 0; transition: background 0.2s; } .ds-btn-light:hover { background: #8fd3c4; } .ds-btn-light:focus-visible { outline: 2px solid #0c766f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Sign-up Field",
+      "kind": "input",
+      "refersTo": "input-signup",
+      "description": "Composite email field and submit inside one ink-bordered square bar, with a teal focus halo.",
+      "html": "<form class=\"ds-signup\"><input type=\"email\" placeholder=\"you@company.com\" aria-label=\"Email\" /><button type=\"button\">Get credentials</button></form>",
+      "css": ".ds-signup { display: flex; max-width: 520px; border: 1px solid #15171c; background: #fff; transition: box-shadow 0.2s; } .ds-signup:focus-within { box-shadow: 0 0 0 3px #e3f0ed, 0 0 0 4px #0c766f; } .ds-signup input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 17px 18px; font: 400 17px \"Schibsted Grotesk\", system-ui, sans-serif; color: #15171c; caret-color: #0c766f; } .ds-signup input:focus { outline: none; } .ds-signup input::placeholder { color: #6e7480; } .ds-signup button { padding: 0 24px; border: 0; background: #15171c; color: #fff; font: 600 16px \"Schibsted Grotesk\", system-ui, sans-serif; cursor: pointer; white-space: nowrap; transition: background 0.2s; } .ds-signup button:hover { background: #0c766f; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Sticky translucent paper bar: mark and wordmark, slate links, ink CTA.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M17 24 L10.5 4.5 L25 18.5 Z M47 24 L53.5 4.5 L39 18.5 Z\" fill=\"#e5483a\"/><circle cx=\"32\" cy=\"37\" r=\"20\" fill=\"#23a6b4\"/><circle cx=\"24.5\" cy=\"32\" r=\"5\" fill=\"#fff\"/><circle cx=\"39.5\" cy=\"32\" r=\"5\" fill=\"#fff\"/><circle cx=\"25.5\" cy=\"32.5\" r=\"2.4\" fill=\"#12343b\"/><circle cx=\"40.5\" cy=\"32.5\" r=\"2.4\" fill=\"#12343b\"/></svg><span>SMTPMonster</span></a><ul><li><a href=\"#\">How it works</a></li><li><a href=\"#\">Why</a></li><li><a href=\"#\">LogMonster</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Get credentials</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 40px; height: 68px; padding: 0 24px; background: rgba(246, 246, 242, 0.92); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid #d9dad3; font-family: \"Schibsted Grotesk\", system-ui, sans-serif; } .ds-brand { display: flex; align-items: center; gap: 10px; color: #15171c; text-decoration: none; font-weight: 700; font-size: 19px; letter-spacing: -0.02em; } .ds-nav ul { display: flex; gap: 28px; margin: 0 0 0 auto; padding: 0; list-style: none; font-size: 15px; } .ds-nav ul a { color: #555b67; text-decoration: none; transition: color 0.2s; } .ds-nav ul a:hover { color: #15171c; } .ds-nav-cta { font-size: 15px; font-weight: 600; text-decoration: none; background: #15171c; color: #fff; padding: 9px 16px; transition: background 0.2s; } .ds-nav-cta:hover { background: #0c766f; } .ds-nav a:focus-visible { outline: 2px solid #0c766f; outline-offset: 3px; }"
+    },
+    {
+      "name": "The Transcript",
+      "kind": "custom",
+      "refersTo": "panel-ink",
+      "description": "Signature ink panel of SMTP protocol lines; held recipients struck in red with a HELD flag, the loop-back line washed in teal.",
+      "html": "<figure class=\"ds-session\"><figcaption class=\"ds-session-bar\"><span>smtp01.smtpmonster.com:587</span><span>Example session</span></figcaption><ol class=\"ds-session-lines\"><li class=\"c\">MAIL FROM:&lt;orders@yourapp.dev&gt;</li><li class=\"c held\"><span>RCPT TO:&lt;<del>ana.lopez@gmail.com</del>&gt;</span><span class=\"ds-flag\">Held</span></li><li class=\"s\">250 OK</li><li class=\"loop\">Looped back to you@company.com</li></ol><p class=\"ds-session-foot\">Delivered to 1 inbox. <strong>Yours.</strong></p></figure>",
+      "css": ".ds-session { margin: 0; background: #15171c; color: #ecece6; font: 400 14px/1.85 \"JetBrains Mono\", ui-monospace, Consolas, monospace; font-variant-ligatures: none; } .ds-session-bar { display: flex; justify-content: space-between; gap: 16px; padding: 12px 20px; border-bottom: 1px solid #2c3038; font-size: 12.5px; color: #a9adb6; } .ds-session-lines { margin: 0; padding: 18px 20px 6px; list-style: none; } .ds-session-lines li { position: relative; padding-left: 30px; } .ds-session-lines li::before { position: absolute; left: 0; color: #6b7080; } .ds-session-lines .c::before { content: \">\"; } .ds-session-lines .s::before { content: \"<\"; } .ds-session-lines .s { color: #8fd3c4; } .ds-session-lines .held { display: flex; justify-content: space-between; gap: 12px; background: rgba(178, 58, 48, 0.16); margin-inline: -20px; padding-inline: 50px 20px; } .ds-session-lines .held::before, .ds-session-lines .loop::before { left: 20px; } .ds-session-lines del { text-decoration-color: #e46a5f; text-decoration-thickness: 1.5px; color: #c9ccd3; } .ds-flag { flex: none; align-self: center; font: 600 11px/1 \"Schibsted Grotesk\", system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #ff9a8f; border: 1px solid currentColor; padding: 4px 6px 3px; } .ds-session-lines .loop { margin-top: 10px; margin-inline: -20px; padding-inline: 50px 20px; background: rgba(64, 196, 170, 0.14); color: #b6eee0; } .ds-session-foot { margin: 12px 0 0; padding: 12px 20px 16px; border-top: 1px solid #2c3038; font: 400 15px \"Schibsted Grotesk\", system-ui, sans-serif; color: #a9adb6; } .ds-session-foot strong { color: #fff; }"
+    },
+    {
+      "name": "Credential Table",
+      "kind": "card",
+      "refersTo": "data-table",
+      "description": "Card-white reference data: grotesk slate headers, mono values, 1px ruled rows, square outline.",
+      "html": "<table class=\"ds-creds\"><tbody><tr><th>Host</th><td>smtp01.smtpmonster.com</td></tr><tr><th>Port</th><td>587</td></tr><tr><th>Password</th><td class=\"muted\">in the email</td></tr></tbody></table>",
+      "css": ".ds-creds { border-collapse: collapse; width: 100%; max-width: 480px; font: 400 14px/1.5 \"JetBrains Mono\", ui-monospace, monospace; background: #fff; border: 1px solid #b9bbb2; color: #15171c; } .ds-creds th, .ds-creds td { text-align: left; padding: 10px 16px; border-bottom: 1px solid #d9dad3; } .ds-creds tr:last-child th, .ds-creds tr:last-child td { border-bottom: 0; } .ds-creds th { font: 500 14px \"Schibsted Grotesk\", system-ui, sans-serif; color: #555b67; width: 104px; } .ds-creds .muted { color: #555b67; font-style: italic; }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "panel-ink",
+      "description": "Ink-ground env block; keys in the on-ink signal, placeholders muted.",
+      "html": "<pre class=\"ds-code\"><code><span class=\"k\">SMTP_HOST</span>=smtp01.smtpmonster.com\n<span class=\"k\">SMTP_PORT</span>=587\n<span class=\"k\">SMTP_PASS</span>=<span class=\"m\">from the email</span></code></pre>",
+      "css": ".ds-code { margin: 0; background: #15171c; color: #ecece6; padding: 18px 20px; font: 400 14px/1.8 \"JetBrains Mono\", ui-monospace, monospace; font-variant-ligatures: none; overflow-x: auto; } .ds-code .k { color: #8fd3c4; } .ds-code .m { color: #a9adb6; }"
+    },
+    {
+      "name": "Held Notice",
+      "kind": "card",
+      "refersTo": "notice-held",
+      "description": "Teal-tint notice naming the original recipients, mono field list with teal keys.",
+      "html": "<div class=\"ds-notice\"><p>This message was originally intended for the recipient(s) below, but we've looped it back to you instead!</p><dl><dt>From</dt><dd>orders@yourapp.dev</dd><dt>To</dt><dd>ana.lopez@gmail.com</dd></dl></div>",
+      "css": ".ds-notice { padding: 16px 18px; background: #e3f0ed; border: 1px solid #b4d6cf; font: 400 14.5px/1.6 \"Schibsted Grotesk\", system-ui, sans-serif; color: #15171c; } .ds-notice p { margin: 0; } .ds-notice dl { margin: 10px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 18px; font: 400 13.5px/1.7 \"JetBrains Mono\", ui-monospace, monospace; } .ds-notice dt { color: #0c766f; font-weight: 600; } .ds-notice dd { margin: 0; }"
+    },
+    {
+      "name": "Ruled Step",
+      "kind": "custom",
+      "description": "Open list row: teal mono counter column, title and slate copy, separated by a 1px rule.",
+      "html": "<ol class=\"ds-steps\"><li><div><h3>Sign up with your email</h3><p>Enter the address you want every caught email delivered to.</p></div></li><li><div><h3>Get your SMTP credentials</h3><p>They arrive by email in about a minute.</p></div></li></ol>",
+      "css": ".ds-steps { margin: 0; padding: 0; list-style: none; counter-reset: step; border-top: 1px solid #15171c; font-family: \"Schibsted Grotesk\", system-ui, sans-serif; } .ds-steps li { counter-increment: step; display: grid; grid-template-columns: 56px 1fr; padding-block: 32px; border-bottom: 1px solid #d9dad3; } .ds-steps li::before { content: counter(step); font: 500 15px/1.9 \"JetBrains Mono\", ui-monospace, monospace; color: #0c766f; } .ds-steps h3 { margin: 0; font-size: 22px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.3; color: #15171c; } .ds-steps p { margin: 8px 0 0; color: #555b67; font-size: 17px; line-height: 1.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Transcript",
+    "overview": "SMTPMonster looks like the documentation of a piece of infrastructure, not the homepage of a side project. The ground is off-white paper, the text is near-black ink, and the proof is the protocol itself: SMTP sessions, credential tables, `.env` blocks and inbox rows set in monospace, presented as facts rather than illustrations. Prose sits beside them in a precise grotesk, tightly tracked at display sizes, plain at reading sizes.\n\nThe world is flat, square and ruled. Structure comes from one-pixel rules, alternating paper tones and full-bleed ink bands, never from cards with rounded corners or soft drop shadows. Colour carries meaning, not decoration: one teal signal for \"held, looped back, yours\", one muted red strike for recipients who never get the mail. The horned teal monster is the mark (nav, favicon, close, the sender avatar on a looped message) and stays small and confident; it is never blown up into a hero illustration.\n\nMotion is spare and grammatical: protocol lines reveal once, line by line, on an expo-out ease, and colour changes on hover in 0.2s. Nothing bounces, nothing loops.",
+    "keyCharacteristics": [
+      "Paper ground, ink text, slate secondary text; colour reserved for meaning.",
+      "Every protocol fact (host, port, command, header, env var) is monospace; everything else is the grotesk.",
+      "Square corners everywhere; the only circle is the mascot avatar.",
+      "One-pixel rules divide content; an ink rule closes each section head.",
+      "Full-bleed ink bands for terminal output and the LogMonster section.",
+      "A recurring 5:6 two-column split, collapsing to one column at 960px."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Teal means held, looped back, or \"act here\". It is never a decorative fill, a section background, or a gradient.", "section": "colors" },
+      { "name": "The Strike Is Not an Accent Rule", "body": "Red appears only for undelivered recipients and errors. If nothing failed or was held, there is no red on the screen.", "section": "colors" },
+      { "name": "The Protocol Is Mono Rule", "body": "Hosts, ports, commands, headers, addresses in a session and env vars are set in the mono with ligatures off. Prose about them stays in the grotesk.", "section": "typography" },
+      { "name": "The Ruled, Not Raised Rule", "body": "Separate content with a one-pixel rule or a tone change. A shadow is reserved for an object that is itself a document.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every protocol fact in the mono with ligatures off, on ink for live output and on card white for reference data.",
+      "Do separate content with 1px rules and tone shifts (paper, paper shade, card, ink).",
+      "Do keep teal for held, looped-back and actionable states, and strike red for undelivered recipients and errors.",
+      "Do close each section head with a 1px ink rule under a 5:6 headline/intro split.",
+      "Do keep the monster small: 28 to 40px in chrome, 72 to 96px at most as a closing mark.",
+      "Do reveal protocol output once, line by line on the expo-out ease, and show it complete under reduced motion."
+    ],
+    "donts": [
+      "Don't round corners on buttons, fields, panels or tables; the avatar disc is the only circle.",
+      "Don't add drop shadows to cards or buttons; only a document shown as an artefact is lifted.",
+      "Don't use teal or red as decorative fills, gradients or section backgrounds.",
+      "Don't turn the monster into a large cartoon hero illustration.",
+      "Don't add bounces, loops or attention-seeking motion."
+    ]
+  }
+}

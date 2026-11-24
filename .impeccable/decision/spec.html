@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{width:1440px;height:900px;background:#f7f7f5;color:#16181d;font-family:"Segoe UI",system-ui,sans-serif;overflow:hidden}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:26px 72px;border-bottom:1px solid #dcded9;font-size:15px}
+.nav b{font-weight:700;letter-spacing:-.01em;font-size:18px}.nav span{color:#5b6170}
+.wrap{display:grid;grid-template-columns:520px 1fr;gap:72px;padding:88px 72px}
+h1{font-size:60px;line-height:1.02;letter-spacing:-.035em;font-weight:650}
+p{font-size:19px;line-height:1.55;color:#5b6170;margin:26px 0 36px}
+.f{display:flex;border:1px solid #16181d;background:#fff}.f div{flex:1;padding:17px;color:#8a8f99;font-size:17px}.f b{background:#16181d;color:#fff;padding:17px 24px;font-size:16px}
+small{display:block;margin-top:12px;color:#5b6170;font-size:14px}
+.t{background:#fff;border:1px solid #dcded9;font:15px/1.9 Consolas,monospace;padding:28px 32px}
+.t .c{color:#8a8f99}.t .s{color:#1f6f5c}.t .r{background:#e7f1ed;margin:0 -32px;padding:0 32px}
+.t s{color:#a33}.t .lbl{float:right;font:600 12px "Segoe UI";color:#1f6f5c;letter-spacing:.06em;text-transform:uppercase}
+</style></head><body>
+<div class="nav"><b>SMTPMonster</b><span>How it works &nbsp;&nbsp; Why &nbsp;&nbsp; Support</span></div>
+<div class="wrap"><div><h1>Dev email that never reaches a real inbox. Except yours.</h1>
+<p>A hosted SMTP server for development and staging. Every message your app sends is looped back to you, with the original recipients listed on top.</p>
+<div class="f"><div>you@company.com</div><b>Get credentials</b></div><small>Free. Credentials arrive by email in about a minute.</small></div>
+<div class="t">
+<div class="c">$ app → smtp.smtpmonster.com:587</div>
+<div>&gt; EHLO staging-app</div><div class="s">&lt; 250 AUTH PLAIN LOGIN STARTTLS</div>
+<div>&gt; AUTH PLAIN ••••••••</div><div class="s">&lt; 235 Authentication succeeded</div>
+<div>&gt; MAIL FROM:&lt;billing@yourapp.com&gt;</div>
+<div class="r">&gt; RCPT TO:&lt;<s>ana@customer.io</s>&gt; <span class="lbl">held</span></div>
+<div class="r">&gt; RCPT TO:&lt;<s>ceo@bigclient.com</s>&gt; <span class="lbl">held</span></div>
+<div>&gt; DATA</div><div class="s">&lt; 250 OK · looped back to you@company.com</div>
+<div class="c">Delivered to 1 inbox. Yours.</div></div>
+</div></body></html>
