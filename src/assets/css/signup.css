@@ -1,0 +1,77 @@
+/* Self-serve sign-up: the hero form. Matches the template's subscribe form. */
+
+.signup-form {
+  position: relative;
+  max-width: 520px;
+  margin-bottom: 12px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 18px 26px;
+  padding-right: 190px;
+  border-radius: 18px;
+  background: #fff;
+  color: #2d3446;
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s ease-out;
+}
+
+.signup-form input::placeholder {
+  color: #5b657e;
+  opacity: 0.8;
+}
+
+.signup-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+.signup-form button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 15px 24px;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 16px;
+  border: 0;
+}
+
+.signup-form button[disabled] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+@media (max-width: 575px) {
+  .signup-form input {
+    padding-right: 26px;
+  }
+  .signup-form button {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+  }
+}
+
+.signup-status {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+}
+
+.signup-status.is-error {
+  color: #ffe1e1;
+  font-weight: 600;
+}
+
+.signup-note {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.signup-note a {
+  color: #fff;
+  text-decoration: underline;
+}
