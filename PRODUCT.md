@@ -32,8 +32,8 @@ Unlike local catch-all tools (a fake SMTP server plus a web UI you have to run),
 ## Capabilities and Constraints
 
 - Free tier; no credit card.
-- Attachments and higher rate limits are available on request via support@smtpmonster.com.
-- Host and port are published on the site (from `TRAP_SERVER`/`TRAP_PORT` in log-monster `api-v2/src/services/smtp.ts`). The encryption mode is unresolved (the credentials email says SSL/TLS from the start, but 587 is conventionally STARTTLS), so the site defers to the credentials email. Rate limits and pricing are undecided: do not invent.
+- Attachments (and inline cid: images) are looped back with every message, on for everyone with nothing to enable and no LogMonster account needed; never present them as an extra or on-request feature (user, 2026-11-24). Messages are capped at 25 MB (smtp-monster serverd.go maxMessageSize). Higher rate limits are available on request via support@smtpmonster.com.
+- Host and port are published on the site (from `TRAP_SERVER`/`TRAP_PORT` in log-monster `api-v2/src/services/smtp.ts`). Encryption is implicit TLS on port 587 (TLS from the first byte, not STARTTLS), per smtp-monster/src/cli/serverd.go (TLSListener and TLSRequired both true); in Nodemailer that is port 587 with secure: true. Rate limits and pricing are undecided: do not invent.
 - Privacy policy, terms and refund policy pages do not exist yet (footer links were placeholders).
 
 ## Brand Commitments
