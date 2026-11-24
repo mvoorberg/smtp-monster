@@ -151,6 +151,17 @@
                 </form>
                 <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
                 <p class="signup-note">Free. We'll email your SMTP credentials to this address.</p>
+                <div id="signup-sent" class="signup-sent" tabindex="-1" hidden>
+                  <i class="lni lni-envelope signup-sent-icon" aria-hidden="true"></i>
+                  <div>
+                    <h2 class="signup-sent-title">Check your inbox</h2>
+                    <p>
+                      We've emailed <strong id="signup-sent-email"></strong>. It should arrive within a
+                      minute; if it doesn't, check your spam folder.
+                    </p>
+                    <button type="button" id="signup-again" class="signup-again">Use a different address</button>
+                  </div>
+                </div>
               </div>
               <div style="height: 100px;"></div>
 

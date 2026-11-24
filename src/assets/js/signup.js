@@ -57,6 +57,27 @@
     }
     setStatus("");
 
+    var sent = document.getElementById("signup-sent");
+    var sentEmail = document.getElementById("signup-sent-email");
+
+    /** Swap the form for the "check your inbox" panel, or back again. */
+    function showSent(email) {
+      var done = !!email;
+      form.hidden = done;
+      if (note) note.hidden = done;
+      sent.hidden = !done;
+      if (done) {
+        sentEmail.textContent = email;
+        sent.focus();
+      } else {
+        input.focus();
+      }
+    }
+
+    document.getElementById("signup-again").addEventListener("click", function () {
+      showSent("");
+    });
+
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (!input.checkValidity()) {
@@ -66,10 +87,12 @@
       button.disabled = true;
       button.textContent = "Sending…";
 
-      post("/fx/smtpmonster/signup", { email: input.value.trim() })
-        .then(function (data) {
-          setStatus(data.message);
+      var email = input.value.trim();
+      post("/fx/smtpmonster/signup", { email: email })
+        .then(function () {
+          setStatus("");
           form.reset();
+          showSent(email);
         })
         .catch(function (err) {
           setStatus(err.message, true);
