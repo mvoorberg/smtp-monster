@@ -8,6 +8,13 @@
   src: url("../fonts/schibsted-grotesk-latin.woff2") format("woff2");
 }
 @font-face {
+  font-family: "Gochi Hand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/gochi-hand-400-latin.woff2") format("woff2");
+}
+@font-face {
   font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 400 800;
@@ -524,14 +531,6 @@ h2 {
   color: var(--ink);
   margin-bottom: 6px;
 }
-.mail-btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 9px 16px;
-  border: 1px solid var(--rule-strong);
-  font-size: 14px;
-  font-weight: 600;
-}
 
 /* ---------- Section heads ---------- */
 .section-head {
@@ -940,4 +939,124 @@ h2 {
     filter: none;
     animation: none !important;
   }
+}
+
+/* ---------- Crayon insertion: "Dev ^ email" with "and Staging" written above ---------- */
+.defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.hero h1 {
+  padding-top: 0.8em;
+}
+.insert {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  vertical-align: baseline;
+}
+.insert-mark {
+  position: absolute;
+  left: 0.12em;
+  bottom: 0.76em;
+  width: 0;
+  height: 0;
+  color: #0e8c83;
+  filter: url(#crayon);
+  pointer-events: none;
+}
+.insert-text {
+  position: absolute;
+  bottom: 0.44em;
+  left: 0;
+  transform: translateX(-44%) rotate(-4deg);
+  transform-origin: 50% 100%;
+  font: 400 0.56em/1 "Gochi Hand", "Segoe Print", cursive;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.insert-caret {
+  position: absolute;
+  left: -0.2em;
+  top: -0.4em;
+  width: 0.4em;
+  height: 0.4em;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Written in once, after the headline settles (JS opts in; visible by default) */
+.js-anim .insert-text {
+  clip-path: inset(-20% 100% -20% -5%);
+  animation: write-in 0.9s cubic-bezier(0.5, 0, 0.2, 1) 0.7s forwards;
+}
+.js-anim .insert-caret path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: draw-in 0.35s ease-out 0.35s forwards;
+}
+@keyframes write-in {
+  to {
+    clip-path: inset(-20% -5% -20% -5%);
+  }
+}
+@keyframes draw-in {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-anim .insert-text,
+  .js-anim .insert-caret path {
+    animation: none !important;
+    clip-path: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.mail-attach {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-size: 14px;
+  color: var(--ink);
+}
+.mail-attach svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--teal);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+.mail-attach-size {
+  color: var(--slate);
+  font: 400 13px var(--mono);
+}
+
+.mail-body p + p {
+  margin-top: 12px;
+}
+.mail-link {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.mail-sign {
+  color: var(--ink-2);
+}
+.mail-attach {
+  display: flex;
+  width: fit-content;
 }

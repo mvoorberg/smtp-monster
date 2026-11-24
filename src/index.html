@@ -22,6 +22,15 @@
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
+    <svg class="defs" aria-hidden="true" focusable="false">
+      <filter id="crayon" x="-10%" y="-20%" width="120%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="grain" />
+        <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.5 1.45" result="speckle" />
+        <feComposite in="SourceGraphic" in2="speckle" operator="in" result="waxy" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="1" seed="3" result="wobble" />
+        <feDisplacementMap in="waxy" in2="wobble" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
 
     <header class="top">
       <nav class="nav wrap" aria-label="Main">
@@ -42,7 +51,7 @@
       <!-- Hero: the offer, the action, and the SMTP session that proves it -->
       <section class="hero wrap" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <h1 id="hero-title">Dev email that never reaches a real inbox. Except yours.</h1>
+          <h1 id="hero-title">Dev<span class="insert"><span class="visually-hidden"> and staging</span><span class="insert-mark" aria-hidden="true"><span class="insert-text">and Staging</span><svg class="insert-caret" viewBox="0 0 40 30"><path d="M4 3 Q12 14 20 26 Q27 14 36 2" /></svg></span></span> email that never reaches a real inbox. Except yours.</h1>
           <p class="lede">
             SMTPMonster is a hosted SMTP server for development and staging. Every message your app
             sends is delivered to you instead, with the original From, To, CC and BCC listed on top.
@@ -105,7 +114,7 @@
           <div class="arrives-copy">
             <h2 id="arrives-title">What lands in your inbox</h2>
             <p>
-              The real message, exactly as your app built it: subject, HTML, plain text and layout.
+              The real message, exactly as your app built it: subject, HTML, plain text, layout, inline images and attachments. Attachments are on for every account, with nothing to turn on.
               SMTPMonster adds a block at the top so you can see who it was meant for, then sends it
               to the address that owns the credentials.
             </p>
@@ -137,7 +146,11 @@
             <div class="mail-body">
               <p class="mail-h">Good news, Ana. Your order is on its way.</p>
               <p>Order #10482 left our warehouse this morning and should arrive on Thursday.</p>
-              <span class="mail-btn">Track your package</span>
+              <!-- <p><span class="mail-link">Track your package</span></p> -->
+              <p class="mail-sign">Regards,
+                <br />Tommy Callahan
+              </p>
+              <p class="mail-attach"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7z" /><path d="M14 3v4h4" /></svg><span>invoice-10482.pdf</span><span class="mail-attach-size">48 KB</span></p>
             </div>
           </figure>
         </div>
@@ -171,7 +184,7 @@
                 <tr><th scope="row">Port</th><td>587</td></tr>
                 <tr><th scope="row">Username</th><td data-you>you@company.com</td></tr>
                 <tr><th scope="row">Password</th><td class="muted">in the email</td></tr>
-                <tr><th scope="row">Security</th><td class="muted">as stated in the email</td></tr>
+                <tr><th scope="row">Security</th><td>TLS from the start (not STARTTLS)</td></tr>
               </tbody>
             </table>
           </li>
@@ -182,13 +195,14 @@
             </div>
             <pre class="code step-aside" aria-label="Example .env settings"><code><span class="k">SMTP_HOST</span>=smtp01.smtpmonster.com
 <span class="k">SMTP_PORT</span>=587
+<span class="k">SMTP_SECURE</span>=true
 <span class="k">SMTP_USER</span>=<span data-you>you@company.com</span>
 <span class="k">SMTP_PASS</span>=<span class="m">from the email</span></code></pre>
           </li>
           <li class="step">
             <div class="step-text">
               <h3>Send email like you always do</h3>
-              <p>Password resets, receipts, digests, notifications. Whoever they're addressed to, they come to you, with From, To, CC and BCC on top.</p>
+              <p>Password resets, receipts, digests, notifications, attachments included. Whoever they're addressed to, they come to you, with From, To, CC and BCC on top.</p>
             </div>
             <ul class="inbox step-aside" aria-label="Example: your inbox after a test run">
               <li><span class="from">SMTPMonster</span><span class="subj">Your order has shipped</span><span class="was">to ana.lopez@gmail.com</span></li>
@@ -233,9 +247,9 @@
           <div class="lm-copy">
             <h2 id="lm-title">Need more than your inbox? Claim it in LogMonster.</h2>
             <p>
-              SMTPMonster runs on <a href="https://logmonster.net">LogMonster</a>, our hosted log
-              collector. Your credentials work on their own; sign in to LogMonster with a Google account
-              and claim them into an App when you want more control.
+              SMTPMonster runs on <a href="https://logmonster.net">LogMonster</a>, our hosted log and email
+              collector. Sign up with a Google account and claim your 
+              SMTPMonster credentials into an App when you want more control. You don't need it for anything on this page, attachments included.
             </p>
             <p class="lm-how">
               In LogMonster: open or create an App, then <strong>Settings › Email Trap › Claim SMTPMonster credentials</strong>.
@@ -273,7 +287,7 @@
         <div>
           <h2 id="close-title">Let the monster eat your dev email.</h2>
           <p>
-            Free to start. Need attachments or higher rate limits?
+            Free to start. Need higher rate limits?
             <a href="mailto:support@smtpmonster.com">support@smtpmonster.com</a> and we'll make it happen.
           </p>
         </div>
