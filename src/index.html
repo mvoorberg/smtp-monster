@@ -1,515 +1,303 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>SMTPMonster - Your SMTP Safety Net</title>
-    <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SMTPMonster: SMTP for dev and staging that never emails real people</title>
+    <meta name="description" content="Don't let email escape your development environment. SMTPMonster catches every email your app sends and delivers it to you instead of the people it was addressed to." />
+    <meta name="theme-color" content="#f6f6f2" />
 
-    <meta property="og:title" content="SMTPMonster - Your SMTP Safety Net">
-    <meta name="twitter:title" content="SMTPMonster - Your SMTP Safety Net">
+    <meta property="og:title" content="SMTPMonster: your SMTP safety net" />
+    <meta property="og:description" content="A hosted SMTP server for development and staging. Every email your app sends comes back to you, never to real recipients." />
+    <meta property="og:image" content="https://www.smtpmonster.com/assets/img/banner.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SMTPMonster: your SMTP safety net" />
+    <meta name="twitter:description" content="A hosted SMTP server for development and staging. Every email your app sends comes back to you, never to real recipients." />
+    <meta name="twitter:image" content="https://www.smtpmonster.com/assets/img/banner.png" />
 
-    <meta name="description" content="Don't let email escape your development environment. SMTPMonster will catch all outgoing emails from your application and send them back to you.">
-    <meta property="og:description" content="Don't let email escape your development environment. SMTPMonster will catch all outgoing emails from your application and send them back to you.">
-    <meta name="twitter:description" content="Don't let email escape your development environment. SMTPMonster will catch all outgoing emails from your application and send them back to you.">
-
-    <meta property="og:image"  content="https://www.smtpmonster.com/assets/img/banner.png">
-    <meta name="twitter:image" content="https://www.smtpmonster.com/assets/img/banner.png">
-
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/img/favicon.ico"
-    />
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- ======== CSS here ======== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/signup.css" />
+    <link rel="icon" href="assets/img/monster.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="assets/img/favicon.ico" />
+    <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
+    <a class="skip" href="#main">Skip to content</a>
 
-    <!-- ======== preloader start ======== -->
-    <div class="preloader">
-      <div class="loader">
-        <div class="spinner">
-          <div class="spinner-container">
-            <div class="spinner-rotator">
-              <div class="spinner-left">
-                <div class="spinner-circle"></div>
-              </div>
-              <div class="spinner-right">
-                <div class="spinner-circle"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- preloader end -->
-
-    <!-- ======== header start ======== -->
-    <header class="header">
-      <div class="navbar-area">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                  <img src="assets/img/logo/logo.png" alt="SMTPMonster.com" />
-                </a>
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                  <span class="toggler-icon"></span>
-                </button>
-
-                <div
-                  class="collapse navbar-collapse sub-menu-bar"
-                  id="navbarSupportedContent"
-                >
-                  <ul id="nav" class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                      <a class="page-scroll active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#features">Features</a>
-                    </li>                    
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#why">Why</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#how">How</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                      <a href="javascript:void(0)">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="javascript:void(0)">Clients</a>
-                    </li> -->
-                  </ul>
-                </div>
-                <!-- navbar collapse -->
-              </nav>
-              <!-- navbar -->
-            </div>
-          </div>
-          <!-- row -->
-        </div>
-        <!-- container -->
-      </div>
-      <!-- navbar area -->
+    <header class="top">
+      <nav class="nav wrap" aria-label="Main">
+        <a class="brand" href="#top" aria-label="SMTPMonster home">
+          <img src="assets/img/monster.svg" alt="" width="36" height="36" />
+          <span>SMTPMonster</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#why">Why</a></li>
+          <li><a href="#logmonster">LogMonster</a></li>
+        </ul>
+        <a class="nav-cta" href="#get-started" data-focus-signup>Get credentials</a>
+      </nav>
     </header>
-    <!-- ======== header end ======== -->
 
-    <!-- ======== hero-section start ======== -->
-    <section id="home" class="hero-section">
-      <div class="container">
-        <div class="row align-items-center position-relative">
-          <div class="col-lg-6">
-            <div class="hero-content">
-              <h1 class="wow fadeInUp" data-wow-delay=".4s">
-                SMTPMonster - Your development safety net
-              </h1>
-              <p class="wow fadeInUp" data-wow-delay=".6s">
-                Don't let email escape from your development environment. 
-                SMTPMonster will catch all outgoing emails from your
-                application and send them back to you.
+    <main id="main">
+      <!-- Hero: the offer, the action, and the SMTP session that proves it -->
+      <section class="hero wrap" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">Dev email that never reaches a real inbox. Except yours.</h1>
+          <p class="lede">
+            SMTPMonster is a hosted SMTP server for development and staging. Every message your app
+            sends is delivered to you instead, with the original From, To, CC and BCC listed on top.
+          </p>
+
+          <div id="get-started" class="signup">
+            <form id="signup-form" class="signup-form" novalidate>
+              <label for="signup-email" class="visually-hidden">Your email address</label>
+              <input
+                type="email"
+                id="signup-email"
+                name="email"
+                placeholder="you@company.com"
+                autocomplete="email"
+                spellcheck="false"
+                required
+              />
+              <button type="submit">Get credentials</button>
+            </form>
+            <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
+            <p class="signup-note">Free, no credit card. Your SMTP credentials arrive at this address in about a minute.</p>
+            <div id="signup-sent" class="signup-sent" tabindex="-1" hidden>
+              <svg class="signup-sent-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v11H3z" /><path d="m3.5 7 8.5 6.5L20.5 7" /></svg>
+              <div>
+                <h2 class="signup-sent-title">Check your inbox</h2>
+                <p>
+                  We've emailed <strong id="signup-sent-email"></strong>. 
+                  It should arrive within a minute; if it doesn't, check your spam folder.
+                </p>
+                <button type="button" id="signup-again" class="signup-again">Use a different address</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <figure class="session" aria-label="An example SMTP session through SMTPMonster">
+          <figcaption class="session-bar">
+            <span><span class="bar-from">staging-app → </span>smtp01.smtpmonster.com:587</span>
+            <span class="session-tag">Example session</span>
+          </figcaption>
+          <ol class="session-lines" data-session>
+            <li class="c">EHLO staging.yourapp.dev</li>
+            <li class="s">250 AUTH PLAIN LOGIN</li>
+            <li class="c">AUTH PLAIN ••••••••••••</li>
+            <li class="s">235 Authentication succeeded</li>
+            <li class="c">MAIL FROM:&lt;orders@yourapp.dev&gt;</li>
+            <li class="c held"><span>RCPT TO:&lt;<del>ana.lopez@gmail.com</del>&gt;</span><span class="flag">Held</span></li>
+            <li class="c held"><span>RCPT TO:&lt;<del>accounts@northwind.co</del>&gt;</span><span class="flag">Held</span></li>
+            <li class="c">DATA · Subject: Your order has shipped</li>
+            <li class="s">250 OK</li>
+            <li class="loop">Looped back to <span data-you>you@company.com</span></li>
+          </ol>
+          <p class="session-foot">Delivered to 1 inbox. <strong>Yours.</strong></p>
+        </figure>
+      </section>
+
+      <!-- What arrives -->
+      <section class="arrives" aria-labelledby="arrives-title">
+        <div class="wrap arrives-grid">
+          <div class="arrives-copy">
+            <h2 id="arrives-title">What lands in your inbox</h2>
+            <p>
+              The real message, exactly as your app built it: subject, HTML, plain text and layout.
+              SMTPMonster adds a block at the top so you can see who it was meant for, then sends it
+              to the address that owns the credentials.
+            </p>
+            <p>
+              Because it arrives in the mail client you already use, you see it rendered the way your
+              users would. No local mail catcher to run, no separate web UI to keep open.
+            </p>
+          </div>
+
+          <figure class="mail" aria-label="A looped-back message as it arrives in your inbox">
+            <div class="mail-head">
+              <img class="mail-avatar" src="assets/img/monster.svg" alt="" width="40" height="40" />
+              <div>
+              <p class="mail-subject">Your order has shipped</p>
+              <p class="mail-meta">
+                <span>SMTPMonster &lt;loopback@smtpmonster.com&gt;</span>
+                <span>to <span data-you>you@company.com</span></span>
               </p>
-
-              <div id="get-started" class="wow fadeInUp" data-wow-delay=".7s">
-                <form id="signup-form" class="signup-form" novalidate>
-                  <label for="signup-email" class="visually-hidden">Your email address</label>
-                  <input
-                    type="email"
-                    id="signup-email"
-                    name="email"
-                    placeholder="you@company.com"
-                    autocomplete="email"
-                    required
-                  />
-                  <button type="submit" class="main-btn btn-hover">Get credentials</button>
-                </form>
-                <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>
-                <p class="signup-note">Free. We'll email your SMTP credentials to this address.</p>
               </div>
-              <div style="height: 100px;"></div>
-
-              <a href="#features" class="scroll-bottom">
-                <i class="lni lni-arrow-down"></i
-              ></a>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="hero-img wow fadeInUp" data-wow-delay=".5s">
-              <img src="assets/img/hero/hero-img.png" alt="" />
+            <div class="mail-notice">
+              <p>This message was originally intended for the recipient(s) below, but we've looped it back to you instead!</p>
+              <dl>
+                <dt>From</dt><dd>orders@yourapp.dev</dd>
+                <dt>To</dt><dd>ana.lopez@gmail.com</dd>
+                <dt>CC</dt><dd>accounts@northwind.co</dd>
+              </dl>
             </div>
-          </div>
+            <div class="mail-body">
+              <p class="mail-h">Good news, Ana. Your order is on its way.</p>
+              <p>Order #10482 left our warehouse this morning and should arrive on Thursday.</p>
+              <span class="mail-btn">Track your package</span>
+            </div>
+          </figure>
         </div>
-      </div>
-    </section>
-    <!-- ======== hero-section end ======== -->
+      </section>
 
-    <!-- ======== feature-section start ======== -->
-    <section id="features" class="feature-section pt-120">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-4 col-md-8 col-sm-10">
-            <div class="single-feature">
-              <div class="icon">
-                <i class="lni lni-bootstrap"></i>
-              </div>
-              <div class="content">
-                <h3>Nothing to Learn</h3>
-                <p>
-                  Sign up with your email and get credentials in a minute. Simply add
-                  them to your application and <i>boom</i> you're done.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-8 col-sm-10">
-            <div class="single-feature">
-              <div class="icon">
-                <i class="lni lni-layout"></i>
-              </div>
-              <div class="content">
-                <h3>Try it Free!</h3>
-                <p>
-                  You send email, we send it back.
-                  No credit card required.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-8 col-sm-10">
-            <div class="single-feature">
-              <div class="icon">
-                <i class="lni lni-coffee-cup"></i>
-              </div>
-              <div class="content">
-                <h3>Need more?</h3>
-                <p>
-                  Need attachments or higher rate limits?
-                  <a href="mailto:support@smtpmonster.com" style="color:#5864FF;text-decoration: underline;">Get in touch</a> and we'll make it happen.
-                </p>
-              </div>
-            </div>
-          </div>
+      <!-- How -->
+      <section class="how wrap" id="how" aria-labelledby="how-title">
+        <div class="section-head">
+          <h2 id="how-title">How it works</h2>
+          <p>Four steps, and you only do the first three once.</p>
         </div>
-      </div>
-    </section>
-    <!-- ======== feature-section end ======== -->
 
-    <!-- ======== about2-section start ======== -->
-    <!-- <section id="about" class="about-section pt-150">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-6">
-            <div class="about-content">
-              <div class="section-title mb-30">
-                <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                  Easy to Use with Tons of Awesome Features
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay=".4s">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam voluptua.
-                </p>
-              </div>
-              <ul>
-                <li>Quick Access</li>
-                <li>Easily to Manage</li>
-                <li>24/7 Support</li>
-              </ul>
-              <a
-                href="javascript:void(0)"
-                class="main-btn btn-hover border-btn wow fadeInUp"
-                data-wow-delay=".6s"
-                >Learn More</a
-              >
+        <ol class="steps">
+          <li class="step">
+            <div class="step-text">
+              <h3>Sign up with your email</h3>
+              <p>Enter the address you want every caught email delivered to. There's no account, no password to choose and no card.</p>
             </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 order-first order-lg-last">
-            <div class="about-img-2">
-              <img src="assets/img/about/about-2.png" alt="" class="w-100" />
-              <img
-                src="assets/img/about/about-right-shape.svg"
-                alt=""
-                class="shape shape-1"
-              />
-              <img
-                src="assets/img/about/right-dots.svg"
-                alt=""
-                class="shape shape-2"
-              />
+            <a class="step-aside link" href="#get-started" data-focus-signup>Enter your address above</a>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <h3>Get your SMTP credentials</h3>
+              <p>They arrive by email in about a minute. Receiving that email is the verification, and the address you signed up with is your username.</p>
             </div>
+            <table class="creds step-aside">
+              <caption class="visually-hidden">The credentials you receive</caption>
+              <colgroup><col class="creds-label" /><col /></colgroup>
+              <tbody>
+                <tr><th scope="row">Host</th><td>smtp01.smtpmonster.com</td></tr>
+                <tr><th scope="row">Port</th><td>587</td></tr>
+                <tr><th scope="row">Username</th><td data-you>you@company.com</td></tr>
+                <tr><th scope="row">Password</th><td class="muted">in the email</td></tr>
+                <tr><th scope="row">Security</th><td class="muted">as stated in the email</td></tr>
+              </tbody>
+            </table>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <h3>Point your dev or staging app at it</h3>
+              <p>Swap them into the SMTP settings your app already has. Any language or framework that sends mail over SMTP works; nothing to install.</p>
+            </div>
+            <pre class="code step-aside" aria-label="Example .env settings"><code><span class="k">SMTP_HOST</span>=smtp01.smtpmonster.com
+<span class="k">SMTP_PORT</span>=587
+<span class="k">SMTP_USER</span>=<span data-you>you@company.com</span>
+<span class="k">SMTP_PASS</span>=<span class="m">from the email</span></code></pre>
+          </li>
+          <li class="step">
+            <div class="step-text">
+              <h3>Send email like you always do</h3>
+              <p>Password resets, receipts, digests, notifications. Whoever they're addressed to, they come to you, with From, To, CC and BCC on top.</p>
+            </div>
+            <ul class="inbox step-aside" aria-label="Example: your inbox after a test run">
+              <li><span class="from">SMTPMonster</span><span class="subj">Your order has shipped</span><span class="was">to ana.lopez@gmail.com</span></li>
+              <li><span class="from">SMTPMonster</span><span class="subj">Reset your password</span><span class="was">to kim@northwind.co</span></li>
+              <li><span class="from">SMTPMonster</span><span class="subj">Your weekly digest</span><span class="was">to 312 recipients</span></li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Why -->
+      <section class="why" id="why" aria-labelledby="why-title">
+        <div class="wrap">
+          <div class="section-head">
+            <h2 id="why-title">Why developers use it</h2>
+            <p>We're developers too. These are the moments it was built for.</p>
           </div>
+          <dl class="reasons">
+            <div class="reason">
+              <dt>You refreshed staging from production</dt>
+              <dd>Your dev database is full of real customer email addresses. Run every job, trigger every workflow; none of them can email those people.</dd>
+            </div>
+            <div class="reason">
+              <dt>You need to see what your app sends</dt>
+              <dd>Not delivered to users doesn't mean invisible. Every message is in your inbox, rendered by a real mail client, ready to check before release.</dd>
+            </div>
+            <div class="reason">
+              <dt>You don't want another service to run</dt>
+              <dd>No local mail catcher, container or web UI. It's just SMTP credentials, so it works the same on your laptop, in CI and on a shared staging server.</dd>
+            </div>
+            <div class="reason">
+              <dt>Mistakes in dev should stay in dev</dt>
+              <dd>A test blast, a looping job, a misconfigured cron. With SMTPMonster in place, the worst case is a busy inbox of your own.</dd>
+            </div>
+          </dl>
         </div>
-      </div>
-    </section> -->
-    <!-- ======== about2-section end ======== -->
+      </section>
 
-    <!-- ======== feature-section start ======== -->
-    <section id="why" class="feature-extended-section pt-100">
-      <div class="feature-extended-wrapper">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xxl-5 col-xl-6 col-lg-8 col-md-9">
-              <div class="section-title text-center mb-60">
-                <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                  Why use SMTPMonster?
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay=".4s">
-                    SMTPMonster is a tool that helps you catch all outgoing emails 
-                    from a running development application and send them back to your own email address.                    
-                </p>
-              </div>
-            </div>
+      <!-- LogMonster -->
+      <section class="lm" id="logmonster" aria-labelledby="lm-title">
+        <div class="wrap lm-grid">
+          <div class="lm-copy">
+            <h2 id="lm-title">Need more than your inbox? Claim it in LogMonster.</h2>
+            <p>
+              SMTPMonster runs on <a href="https://logmonster.net">LogMonster</a>, our hosted log
+              collector. Your credentials work on their own; sign in to LogMonster with a Google account
+              and claim them into an App when you want more control.
+            </p>
+            <p class="lm-how">
+              In LogMonster: open or create an App, then <strong>Settings › Email Trap › Claim SMTPMonster credentials</strong>.
+            </p>
+            <a class="btn-light" href="https://logmonster.net">Open LogMonster</a>
           </div>
-
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div class="icon">
-                  <i class="lni lni-display"></i>
-                </div>
-                <div class="content">
-                  <h3>Developer Focused</h3>
-                  <p>
-                    We're developers too. We know how important it is that 
-                    applications running in development don't send emails to real users.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div class="icon">
-                  <i class="lni lni-leaf"></i>
-                </div>
-                <div class="content">
-                  <h3>Refresh from Prod</h3>
-                  <p>
-                    Don't worry about having real email addresses in your 
-                    dev database - they aren't going anywhere!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="single-feature-extended">
-                <div class="icon">
-                  <i class="lni lni-grid-alt"></i>
-                </div>
-                <div class="content">
-                  <h3>Preview sent messages</h3>
-                  <p>
-                    Just because they're not delivered to real users doesn't mean
-                    you can't see what your application is sending, they're in your inbox.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
+          <ul class="lm-list">
+            <li>
+              <h3>See every email it catches</h3>
+              <p>Browse caught messages in the trap viewer alongside your App.</p>
+            </li>
+            <li>
+              <h3>Run end-to-end tests against it</h3>
+              <p>Check that the emails your test suite triggers were actually sent.</p>
+            </li>
+            <li>
+              <h3>Change the password</h3>
+              <p>Rotate credentials yourself instead of signing up again.</p>
+            </li>
+            <li>
+              <h3>Forward to a verified address</h3>
+              <p>Send caught mail on to an address you've confirmed.</p>
+            </li>
+            <li>
+              <h3>Collect your app's logs</h3>
+              <p>Send log lines to the same App; FATAL errors trigger a notification email.</p>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
-    <!-- ======== feature-section end ======== -->
+      </section>
 
-    <!-- ======== how-section start ======== -->
-    <section id="how" class="about-section pt-150">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-6">
-            <div class="about-img">
-              <img src="assets/img/about/about-1.png" alt="" class="w-100" />
-              <img
-                src="assets/img/about/about-left-shape.svg"
-                alt=""
-                class="shape shape-1"
-              />
-              <img
-                src="assets/img/about/left-dots.svg"
-                alt=""
-                class="shape shape-2"
-              />
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6">
-            <div class="about-content">
-              <div class="section-title mb-30">
-                <h2 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                  How does it work?
-                </h2>
-                <p class="wow fadeInUp" data-wow-delay=".4s">
-                  When your application sends an email using the SMTPMonster credentials, 
-                  we'll take the From, To, CC & BCC and add them to the message body and send it 
-                  all back to the username that logged in to the SMTPMonster server in the first place.
-                </p>
-                <p class="wow fadeInUp" data-wow-delay=".4s">
-                  The result is that every single message sent by your application is sent back to an inbox that you control. 
-                  It doesn't make a difference who it's addressed to, it's not going to get delivered to them.    
-                </p>
-              </div>
-              <!-- <a
-                href="javascript:void(0)"
-                class="main-btn btn-hover border-btn wow fadeInUp"
-                data-wow-delay=".6s"
-                >Discover More</a
-              > -->
-            </div>
-          </div>
+      <!-- Close -->
+      <section class="close wrap" aria-labelledby="close-title">
+        <img class="close-mark" src="assets/img/monster.svg" alt="" width="96" height="96" />
+        <div>
+          <h2 id="close-title">Let the monster eat your dev email.</h2>
+          <p>
+            Free to start. Need attachments or higher rate limits?
+            <a href="mailto:support@smtpmonster.com">support@smtpmonster.com</a> and we'll make it happen.
+          </p>
         </div>
-      </div>
-    </section>
-    <!-- ======== about-section end ======== -->
+        <a class="btn-dark" href="#get-started" data-focus-signup>Get credentials</a>
+      </section>
+    </main>
 
-    <!-- ======== subscribe-section start ======== -->
-    <!-- <section id="contact" class="subscribe-section pt-120">
-      <div class="container">
-        <div class="subscribe-wrapper img-bg">
-          <div class="row align-items-center">
-            
-            <div class="col-lg-6 col-xl-7">
-              <div class="section-title mb-15">
-                <h2 class="text-white mb-25">Try it now!</h2>
-                <p class="text-white pr-5">
-                  Fire us a quick email and we'll send you credentials.
-                </p>
-              </div>
-            </div>
-
-            <div class="col-lg-6 col-xl-5">
-              <form action="#" class="subscribe-form">
-                <input
-                  type="email"
-                  name="subs-email"
-                  id="subs-email"
-                  placeholder="Your Email"
-                />
-                <button type="submit" class="main-btn btn-hover">
-                  Change my Life
-                </button>
-              </form>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section> -->
-    <!-- ======== subscribe-section end ======== -->
-
-    <!-- ======== footer start ======== -->
-    <footer class="footer">
-      <div class="container">
-        <div class="widget-wrapper">
-          <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6">
-              <div class="footer-widget">
-                <div class="logo mb-30">
-                  <a href="index.html">
-                    <img src="assets/img/logo/logo.png" alt="" style="width: 300px;"/>
-                  </a>
-                </div>
-                <p class="desc mb-30 text-white">
-                  Keep email from your developemnt environment <b><i>in</i></b> your development environment.
-                </p>
-                <!-- <ul class="socials">
-                  <li>
-                    <a href="jvascript:void(0)">
-                      <i class="lni lni-facebook-filled"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="jvascript:void(0)">
-                      <i class="lni lni-twitter-filled"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="jvascript:void(0)">
-                      <i class="lni lni-instagram-filled"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="jvascript:void(0)">
-                      <i class="lni lni-linkedin-original"></i>
-                    </a>
-                  </li>
-                </ul> -->
-              </div>
-            </div>
-
-            <div class="col-xl-2 col-lg-2 col-md-6">
-              <div class="footer-widget">
-                <h3>About Us</h3>
-                <ul class="links">
-                  <li><a href="#home">Home</a></li>
-                  <li><a href="#features">Features</a></li>
-                  <!-- <li><a href="javascript:void(0)">About</a></li>
-                  <li><a href="javascript:void(0)">Testimonials</a></li> -->
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6">
-              <div class="footer-widget">
-                <h3>Features</h3>
-                <ul class="links">
-                  <li><a href="#how">How it works</a></li>
-                  <li><a href="javascript:void(0)">Privacy policy</a></li>
-                  <li><a href="javascript:void(0)">Terms of service</a></li>
-                  <li><a href="javascript:void(0)">Refund policy</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-lg-3 col-md-6">
-              <div class="footer-widget">
-                <h3>Other Products</h3>
-                <ul class="links">
-                  <li><a href="https://logmonster.net">LogMonster.net</a></li>
-                  <!-- <li><a href="jvascript:void(0)">Billing Software</a></li>
-                  <li><a href="jvascript:void(0)">Booking System</a></li>
-                  <li><a href="jvascript:void(0)">Tracking System</a></li> -->
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <p class="foot-brand">
+          <img src="assets/img/monster.svg" alt="" width="28" height="28" />
+          <span>Keep email from your development environment <em>in</em> your development environment.</span>
+        </p>
+        <ul class="foot-links">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#why">Why</a></li>
+          <li><a href="mailto:support@smtpmonster.com">Support</a></li>
+          <li><a href="https://logmonster.net">LogMonster.net</a></li>
+        </ul>
+        <p class="foot-legal">© <span data-year>2026</span> SMTPMonster</p>
       </div>
     </footer>
-    <!-- ======== footer end ======== -->
 
-    <!-- ======== scroll-top ======== -->
-    <a href="#" class="scroll-top btn-hover">
-      <i class="lni lni-chevron-up"></i>
-    </a>
-
-    <!-- ======== JS here ======== -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/signup.js"></script>
+    <script src="assets/js/site.js"></script>
   </body>
 </html>

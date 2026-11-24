@@ -75,3 +75,69 @@
   color: #fff;
   text-decoration: underline;
 }
+
+/* Shown in the form's place once the email is on its way. */
+.signup-sent {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 520px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: #fff;
+  color: #2d3446;
+  outline: none;
+}
+
+.signup-sent[hidden] {
+  display: none;
+}
+
+.signup-sent-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eef0ff;
+  color: #5864ff;
+  font-size: 22px;
+}
+
+.signup-sent-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #2d3446;
+}
+
+.hero-section .hero-content .signup-sent p {
+  margin: 0;
+  padding-right: 0;
+  font-size: 15px;
+  line-height: 23px;
+  color: #5b657e;
+}
+
+.signup-sent strong {
+  color: #2d3446;
+  overflow-wrap: anywhere;
+}
+
+.signup-again {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #5864ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.signup-again:hover {
+  color: #3c46e0;
+}

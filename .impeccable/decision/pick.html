@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0}body{width:1440px;height:900px;background:#c9a46a;font-family:Arial;overflow:hidden;position:relative}
+.nav{display:flex;justify-content:space-between;padding:28px 56px;font:700 15px Arial;letter-spacing:.1em;text-transform:uppercase;color:#1a1a1a}
+.env{position:absolute;left:56px;right:56px;top:96px;bottom:48px;background:#d4b27a;border:1px solid #1a1a1a;padding:56px}
+.stamp{position:absolute;right:56px;top:48px;width:120px;height:140px;border:2px dashed #1a1a1a;display:grid;place-items:center;font:700 13px Arial}
+.to{position:absolute;left:520px;top:300px;font:22px/1.5 "Courier New";color:#1a1a1a}
+.to s{color:#1a1a1a}
+.label{position:absolute;left:430px;top:420px;width:640px;background:#f4d03f;border:1px solid #1a1a1a;padding:22px 28px;transform:rotate(-2deg)}
+.label h2{font:900 34px "Arial Black";letter-spacing:.04em}.label p{font:16px "Courier New";margin:10px 0}
+.field{background:#f6f1e4;border:1px solid #1a1a1a;padding:16px;font:20px "Courier New";display:flex;justify-content:space-between}
+.field b{background:#1a1a1a;color:#f4d03f;padding:4px 14px;font:700 16px Arial}
+h1{font:900 64px/1 "Arial Black";max-width:420px;color:#1a1a1a}
+.rs{position:absolute;left:90px;bottom:70px;border:4px solid #c0392b;color:#c0392b;font:900 30px "Arial Black";padding:8px 18px;transform:rotate(-8deg)}
+</style></head><body>
+<div class="nav"><span>SMTPMonster</span><span>How it works &nbsp; Why</span></div>
+<div class="env"><h1>Don't let dev email escape.</h1><div class="stamp">SMTP</div>
+<div class="to">Acme Customer<br><s>ana@customer.io</s><br>Toronto ON</div>
+<div class="label"><h2>RETURN TO SENDER</h2><p>Not delivered. Forwarded to:</p><div class="field">you@yourcompany.com<b>Get credentials</b></div></div>
+<div class="rs">LOOPED BACK</div></div>
+</body></html>
