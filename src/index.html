@@ -114,7 +114,7 @@
           <div class="arrives-copy">
             <h2 id="arrives-title">What lands in your inbox</h2>
             <p>
-              The real message, exactly as your app built it: subject, HTML, plain text, layout, inline images and attachments. Attachments are on for every account, with nothing to turn on.
+              The real message, exactly as your app built it: subject, HTML, plain text, layout, inline images and attachments.
               SMTPMonster adds a block at the top so you can see who it was meant for, then sends it
               to the address that owns the credentials.
             </p>
@@ -174,7 +174,9 @@
           <li class="step">
             <div class="step-text">
               <h3>Get your SMTP credentials</h3>
-              <p>They arrive by email in about a minute. Receiving that email is the verification, and the address you signed up with is your username.</p>
+              <p>They arrive by email in about a minute. 
+                Receiving that email is the verification, and the address you signed up with is your username.
+                This is the only time you will see this password. Store it securely.</p>
             </div>
             <table class="creds step-aside">
               <caption class="visually-hidden">The credentials you receive</caption>
@@ -183,7 +185,7 @@
                 <tr><th scope="row">Host</th><td>smtp01.smtpmonster.com</td></tr>
                 <tr><th scope="row">Port</th><td>587</td></tr>
                 <tr><th scope="row">Username</th><td data-you>you@company.com</td></tr>
-                <tr><th scope="row">Password</th><td class="muted">in the email</td></tr>
+                <tr><th scope="row">Password</th><td class="muted">&lt;**********&gt;</td></tr>
                 <tr><th scope="row">Security</th><td>TLS from the start (not STARTTLS)</td></tr>
               </tbody>
             </table>
@@ -191,13 +193,15 @@
           <li class="step">
             <div class="step-text">
               <h3>Point your dev or staging app at it</h3>
-              <p>Swap them into the SMTP settings your app already has. Any language or framework that sends mail over SMTP works; nothing to install.</p>
+              <p>Swap them into the SMTP settings your app already has. 
+                Any language or framework that sends mail over SMTP works; 
+                nothing extra to install.</p>
             </div>
             <pre class="code step-aside" aria-label="Example .env settings"><code><span class="k">SMTP_HOST</span>=smtp01.smtpmonster.com
 <span class="k">SMTP_PORT</span>=587
 <span class="k">SMTP_SECURE</span>=true
 <span class="k">SMTP_USER</span>=<span data-you>you@company.com</span>
-<span class="k">SMTP_PASS</span>=<span class="m">from the email</span></code></pre>
+<span class="k">SMTP_PASS</span>=<span class="m">&lt;**********&gt;</span></code></pre>
           </li>
           <li class="step">
             <div class="step-text">
