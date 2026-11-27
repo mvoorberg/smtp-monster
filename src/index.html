@@ -69,6 +69,11 @@
                 spellcheck="false"
                 required
               />
+              <!-- The API drops sign-ups that use it. -->
+              <div class="signup-hp" aria-hidden="true">
+                <label for="signup-website">Website</label>
+                <input type="text" id="signup-website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
               <button type="submit">Get credentials</button>
             </form>
             <p id="signup-status" class="signup-status" role="status" aria-live="polite"></p>

@@ -43,6 +43,8 @@
   var form = document.getElementById("signup-form");
   if (form) {
     var input = document.getElementById("signup-email");
+    var honeypot = document.getElementById("signup-website");
+    var shownAt = Date.now();
     var button = form.querySelector("button");
     var status = document.getElementById("signup-status");
     var note = document.querySelector(".signup-note");
@@ -88,7 +90,11 @@
       button.textContent = "Sending…";
 
       var email = input.value.trim();
-      post("/fx/smtpmonster/signup", { email: email })
+      post("/fx/smtpmonster/signup", {
+        email: email,
+        website: honeypot ? honeypot.value : "",
+        elapsedMs: Date.now() - shownAt,
+      })
         .then(function () {
           setStatus("");
           form.reset();
